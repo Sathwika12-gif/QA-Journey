@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <title>Manual Testing Interview Questions | QA Journey</title>
 
 <meta name="description" content="Top manual testing interview questions with answers for QA testers.">
@@ -11,229 +12,354 @@ body{
 font-family: Arial, sans-serif;
 max-width:900px;
 margin:auto;
-line-height:1.6;
+line-height:1.7;
 padding:20px;
+background:#fafafa;
 }
 
-h1{
-color:#2c3e50;
+/* NAVBAR */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:#2c3e50;
+padding:12px 20px;
+border-radius:6px;
+margin-bottom:25px;
 }
 
-h2{
-margin-top:30px;
-color:#333;
-}
-
-.question{
+.navbar a{
+color:white;
+text-decoration:none;
+margin-right:15px;
 font-weight:bold;
-margin-top:25px;
 }
 
-.answer{
-margin-left:10px;
+.navbar a:hover{
+text-decoration:underline;
+}
+
+.logo{
+color:white;
+font-size:18px;
+font-weight:bold;
+}
+
+/* SEARCH */
+
+.search-box{
+margin-bottom:25px;
+}
+
+.search-box input{
+width:100%;
+padding:12px;
+font-size:16px;
+border-radius:6px;
+border:1px solid #ccc;
+}
+
+/* INTRO */
+
+.intro{
+background:#eef5ff;
+padding:20px;
+border-left:5px solid #3b82f6;
+margin-bottom:30px;
+}
+
+/* TOC */
+
+.toc{
+background:white;
+padding:15px;
+border-radius:8px;
+box-shadow:0 2px 6px rgba(0,0,0,0.08);
+margin-bottom:30px;
+}
+
+.toc li{
+margin:8px 0;
+}
+
+/* ACCORDION */
+
+details{
+background:white;
+padding:18px;
+border-radius:8px;
+box-shadow:0 2px 8px rgba(0,0,0,0.08);
+margin-bottom:15px;
+}
+
+summary{
+font-weight:bold;
+font-size:16px;
+cursor:pointer;
+}
+
+details p{
+margin-top:10px;
 }
 
 </style>
+
+<script>
+
+function searchQuestions(){
+let input=document.getElementById("searchInput").value.toLowerCase();
+let questions=document.querySelectorAll("details");
+
+questions.forEach(function(q){
+
+let text=q.innerText.toLowerCase();
+
+if(text.includes(input)){
+q.style.display="block";
+}
+else{
+q.style.display="none";
+}
+
+});
+
+}
+
+</script>
 
 </head>
 
 <body>
 
+<div class="navbar">
+
+<div class="logo">QA Journey</div>
+
+<div>
+<a href="index.html">Home</a>
+<a href="#">Manual Testing</a>
+<a href="#">Automation</a>
+<a href="#">API Testing</a>
+</div>
+
+</div>
+
 <h1>Manual Testing Interview Questions</h1>
 
-<p>Here are the most commonly asked manual testing interview questions for QA testers.</p>
+<div class="search-box">
+<input id="searchInput" onkeyup="searchQuestions()" placeholder="Search interview questions...">
+</div>
 
+<div class="intro">
 
-<h2>1. What is the difference between verification and validation?</h2>
 <p>
-Verification checks whether the software is built according to specifications without executing the code.
-Validation checks whether the application meets user needs by executing the application.
+
+Manual testing is a fundamental skill for every QA engineer and software tester.
+This guide contains the most commonly asked <strong>manual testing interview questions with answers</strong>
+to help both beginners and experienced testers prepare for interviews.
+
 </p>
 
-
-<h2>2. What is a test scenario and how is it different from a test case?</h2>
 <p>
-A test scenario is a high-level description of what functionality needs to be tested.
+These questions are based on real-world QA scenarios used in Agile development environments.
+</p>
+
+</div>
+
+<div class="toc">
+
+<h3>Topics Covered</h3>
+
+<ul>
+<li>Verification vs Validation</li>
+<li>Test Scenario vs Test Case</li>
+<li>Bug Life Cycle</li>
+<li>Sanity Testing</li>
+<li>Regression Testing</li>
+<li>Black Box Testing Techniques</li>
+<li>STLC</li>
+<li>Exploratory Testing</li>
+</ul>
+
+</div>
+
+<details>
+<summary>1. What is the difference between verification and validation?</summary>
+<p>
+Verification checks whether software is built according to requirements without executing code.
+Validation checks whether the application meets user expectations by executing the application.
+</p>
+</details>
+
+<details>
+<summary>2. What is a test scenario and how is it different from a test case?</summary>
+<p>
+A test scenario is a high-level description of what needs to be tested.
 A test case is a detailed step-by-step instruction including test data and expected results.
 </p>
+</details>
 
-
-<h2>3. Explain the bug life cycle.</h2>
+<details>
+<summary>3. Explain the bug life cycle.</summary>
 <p>
-The bug life cycle describes the stages a defect goes through:
-New → Assigned → Open/In Progress → Fixed → Retesting → Closed.
-If the issue persists, the tester reopens the defect.
+New → Assigned → Open → Fixed → Retesting → Closed. If the issue persists it can be reopened.
 </p>
+</details>
 
-
-<h2>4. What is sanity testing?</h2>
+<details>
+<summary>4. What is sanity testing?</summary>
 <p>
-Sanity testing is performed after a bug fix or minor change to verify that the specific functionality works correctly.
-It is narrow and focused.
+Sanity testing verifies that specific functionality works correctly after a bug fix or small change.
 </p>
+</details>
 
-
-<h2>5. What will you do if a developer says “This is not a bug”?</h2>
+<details>
+<summary>5. What will you do if a developer says "This is not a bug"?</summary>
 <p>
-I verify the requirement again and provide steps, screenshots, or logs to justify the issue.
-If behavior matches requirements, the defect can be closed; otherwise it is discussed with the BA or product owner.
+Re-check the requirement, provide evidence, and discuss with the BA or product owner if needed.
 </p>
+</details>
 
-
-<h2>6. Difference between severity and priority</h2>
+<details>
+<summary>6. Difference between severity and priority</summary>
 <p>
-Severity indicates how much the defect impacts functionality.
-Priority indicates how quickly the defect should be fixed.
+Severity measures the impact of a defect while priority determines how quickly it should be fixed.
 </p>
+</details>
 
-
-<h2>7. What is regression testing?</h2>
+<details>
+<summary>7. What is regression testing?</summary>
 <p>
-Regression testing ensures that existing functionality is not affected after new changes, bug fixes, or feature additions.
+Regression testing ensures existing features work after code changes or bug fixes.
 </p>
+</details>
 
-
-<h2>8. Difference between smoke testing and sanity testing</h2>
+<details>
+<summary>8. Difference between smoke testing and sanity testing</summary>
 <p>
-Smoke testing verifies critical functionalities of a new build.
-Sanity testing verifies specific functionality after minor changes.
-Smoke testing is broad while sanity testing is narrow.
+Smoke testing verifies major functionality of a build while sanity testing checks specific functionality after changes.
 </p>
+</details>
 
-
-<h2>9. How do you write a good bug report?</h2>
-<ul>
-<li>Bug ID</li>
-<li>Title</li>
-<li>Description</li>
-<li>Steps to reproduce</li>
-<li>Expected result</li>
-<li>Actual result</li>
-<li>Severity and Priority</li>
-<li>Environment details</li>
-<li>Screenshots or logs</li>
-</ul>
-
-
-<h2>10. What if requirements are unclear?</h2>
+<details>
+<summary>9. How do you write a good bug report?</summary>
 <p>
-Discuss with BA, product owner, or developers.
-Perform exploratory testing and clarify doubts with stakeholders.
+Include bug ID, title, description, steps to reproduce, expected result, actual result, environment details, and screenshots.
 </p>
+</details>
 
-
-<h2>11. Black box testing techniques</h2>
-<ul>
-<li>Equivalence Partitioning</li>
-<li>Boundary Value Analysis</li>
-<li>Decision Table Testing</li>
-<li>State Transition Testing</li>
-</ul>
-
-
-<h2>12. Test case design techniques</h2>
-<ul>
-<li>Equivalence Partitioning</li>
-<li>Boundary Value Analysis</li>
-<li>Decision Table Testing</li>
-<li>State Transition Testing</li>
-</ul>
-
-
-<h2>13. Types of non-functional testing</h2>
-<ul>
-<li>Performance Testing</li>
-<li>Load Testing</li>
-<li>Stress Testing</li>
-<li>Security Testing</li>
-<li>Usability Testing</li>
-<li>Compatibility Testing</li>
-</ul>
-
-
-<h2>14. STLC stages</h2>
-<ol>
-<li>Requirement Analysis</li>
-<li>Test Planning</li>
-<li>Test Case Design</li>
-<li>Test Environment Setup</li>
-<li>Test Execution</li>
-<li>Test Closure</li>
-</ol>
-
-
-<h2>15. Entry criteria and exit criteria</h2>
+<details>
+<summary>10. What if requirements are unclear?</summary>
 <p>
-Entry criteria are conditions required before testing starts.
-Exit criteria are conditions required before testing stops.
+Discuss with BA, product owner, or developers and perform exploratory testing.
 </p>
+</details>
 
-
-<h2>16. What is exploratory testing?</h2>
+<details>
+<summary>11. Black box testing techniques</summary>
 <p>
-Exploratory testing is an approach where testers simultaneously learn the application, design tests, and execute them.
+Equivalence Partitioning, Boundary Value Analysis, Decision Table Testing, State Transition Testing.
 </p>
+</details>
 
-
-<h2>17. Functional vs non-functional testing</h2>
+<details>
+<summary>12. Test case design techniques</summary>
 <p>
-Functional testing checks application features.
-Non-functional testing checks performance, usability, and reliability.
+Equivalence Partitioning, Boundary Value Analysis, Decision Table Testing, State Transition Testing.
 </p>
+</details>
 
-
-<h2>18. What is UAT?</h2>
+<details>
+<summary>13. Types of non-functional testing</summary>
 <p>
-User Acceptance Testing is performed by end users or business stakeholders to validate business requirements before production release.
+Performance Testing, Load Testing, Stress Testing, Security Testing, Usability Testing, Compatibility Testing.
 </p>
+</details>
 
-
-<h2>19. Retesting vs regression testing</h2>
+<details>
+<summary>14. STLC stages</summary>
 <p>
-Retesting verifies a specific bug fix.
-Regression testing verifies the stability of the overall application after changes.
+Requirement Analysis, Test Planning, Test Case Design, Test Environment Setup, Test Execution, Test Closure.
 </p>
+</details>
 
-
-<h2>20. What is a test plan?</h2>
+<details>
+<summary>15. Entry criteria and exit criteria</summary>
 <p>
-A test plan defines the testing scope, strategy, resources, schedule, and environment for the testing process.
+Entry criteria define when testing begins while exit criteria define when testing stops.
 </p>
+</details>
 
-
-<h2>21. Test case vs test script</h2>
+<details>
+<summary>16. What is exploratory testing?</summary>
 <p>
-A test case is a manual testing document.
-A test script is an automated version written in tools like Selenium or Playwright.
+Exploratory testing involves learning, designing, and executing tests simultaneously.
 </p>
+</details>
 
-
-<h2>22. What is defect leakage?</h2>
+<details>
+<summary>17. Functional vs non-functional testing</summary>
 <p>
-Defect leakage occurs when a defect is missed during testing and discovered later in production.
+Functional testing checks system features while non-functional testing checks performance and usability.
 </p>
+</details>
 
-
-<h2>23. What is defect density?</h2>
+<details>
+<summary>18. What is UAT?</summary>
 <p>
-Defect density measures the number of defects found per module or per lines of code.
+User Acceptance Testing verifies the application meets business requirements before release.
 </p>
+</details>
 
-
-<h2>24. What is a test summary report?</h2>
+<details>
+<summary>19. Retesting vs regression testing</summary>
 <p>
-A document summarizing test execution results, test coverage, and defects found during testing.
+Retesting verifies bug fixes while regression testing ensures existing functionality still works.
 </p>
+</details>
 
+<details>
+<summary>20. What is a test plan?</summary>
+<p>
+A document describing testing scope, strategy, schedule, resources, and environment.
+</p>
+</details>
 
-<h2>25. Test environments</h2>
-<ul>
-<li>Development</li>
-<li>QA/Test</li>
-<li>Pre-production</li>
-<li>Production</li>
-</ul>
+<details>
+<summary>21. Test case vs test script</summary>
+<p>
+A test case is used for manual testing while a test script is used for automation.
+</p>
+</details>
 
+<details>
+<summary>22. What is defect leakage?</summary>
+<p>
+Defect leakage occurs when bugs are missed during testing and found in production.
+</p>
+</details>
+
+<details>
+<summary>23. What is defect density?</summary>
+<p>
+Defect density measures the number of defects per module or per lines of code.
+</p>
+</details>
+
+<details>
+<summary>24. What is a test summary report?</summary>
+<p>
+A document summarizing testing results, executed test cases, and defects found.
+</p>
+</details>
+
+<details>
+<summary>25. Test environments</summary>
+<p>
+Development, QA/Test, Pre-production, and Production environments.
+</p>
+</details>
 
 </body>
 </html>

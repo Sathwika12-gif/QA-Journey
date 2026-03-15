@@ -2,59 +2,26 @@
 <html>
 <head>
 
-<title>Top 25 Manual Testing Interview Questions with Answers | QA Journey</title>
+<title>100 Manual Testing Interview Questions and Answers (2026) | QA Journey</title>
 
-<meta name="description" content="Top manual testing interview questions with answers for QA testers.">
+<meta name="description" content="Top 100 manual testing interview questions and answers for QA engineers and software testers including STLC, bug lifecycle, regression testing and real QA scenarios.">
+
 <meta name="keywords" content="manual testing interview questions, QA interview questions, software testing interview questions">
-<meta name="author" content="QA Journey">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- FAQ Schema for SEO -->
-<script type="application/ld+json">
-{
- "@context": "https://schema.org",
- "@type": "FAQPage",
- "mainEntity": [
- {
- "@type": "Question",
- "name": "What is regression testing?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "Regression testing ensures existing functionality works correctly after new code changes or bug fixes."
- }
- },
- {
- "@type": "Question",
- "name": "What is STLC?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "STLC stands for Software Testing Life Cycle which includes requirement analysis, test planning, test execution and test closure."
- }
- },
- {
- "@type": "Question",
- "name": "What is defect leakage?",
- "acceptedAnswer": {
- "@type": "Answer",
- "text": "Defect leakage occurs when defects are missed during testing and discovered later in production."
- }
- }
- ]
-}
-</script>
+<link rel="icon" href="../logo.png">
 
 <style>
 
 body{
-font-family: Arial, sans-serif;
+font-family:Arial, sans-serif;
 max-width:900px;
 margin:auto;
-line-height:1.7;
 padding:20px;
+line-height:1.7;
 background:#fafafa;
 }
-
-/* NAVBAR */
 
 .navbar{
 display:flex;
@@ -63,7 +30,6 @@ align-items:center;
 background:#2c3e50;
 padding:12px 20px;
 border-radius:6px;
-margin-bottom:25px;
 }
 
 .navbar a{
@@ -73,71 +39,37 @@ margin-right:15px;
 font-weight:bold;
 }
 
-.logo{
-color:white;
-font-size:18px;
-font-weight:bold;
+.logo img{
+height:40px;
 }
 
-/* SEARCH */
-
-.search-box{
-margin-bottom:25px;
-}
-
-.search-box input{
-width:100%;
-padding:14px 18px;
-font-size:16px;
-border-radius:30px;
-border:1px solid #ddd;
-outline:none;
-box-shadow:0 2px 8px rgba(0,0,0,0.08);
-transition:0.2s;
-}
-
-.search-box input:focus{
-border-color:#3b82f6;
-box-shadow:0 0 8px rgba(59,130,246,0.3);
-}
-
-/* INTRO */
+h1{margin-top:30px}
 
 .intro{
 background:#eef5ff;
 padding:20px;
 border-left:5px solid #3b82f6;
-margin-bottom:30px;
+margin-top:20px;
 }
 
-/* TOPICS */
-
-.toc{
+.diagram{
 background:white;
 padding:15px;
 border-radius:8px;
-box-shadow:0 2px 6px rgba(0,0,0,0.08);
-margin-bottom:30px;
-}
-
-/* ACCORDION */
-
-details{
-background:white;
-padding:18px;
-border-radius:8px;
 box-shadow:0 2px 8px rgba(0,0,0,0.08);
-margin-bottom:15px;
-}
-
-summary{
+margin:25px 0;
+text-align:center;
 font-weight:bold;
-font-size:16px;
-cursor:pointer;
 }
 
-details p{
-margin-top:10px;
+.question{
+margin-top:22px;
+font-weight:bold;
+font-size:18px;
+}
+
+.answer{
+margin-top:6px;
 }
 
 footer{
@@ -148,206 +80,477 @@ border-top:1px solid #ddd;
 color:#666;
 }
 
+.toc{
+background:white;
+padding:20px;
+margin-top:30px;
+border-radius:8px;
+box-shadow:0 2px 8px rgba(0,0,0,0.08);
+}
+
+.toc ul{
+list-style:none;
+padding-left:0;
+}
+
+.toc li{
+margin:8px 0;
+}
+
+.toc a{
+text-decoration:none;
+color:#3b82f6;
+font-weight:bold;
+}
+
 </style>
-
-<script>
-
-function searchQuestions(){
-let input=document.getElementById("searchInput").value.toLowerCase();
-let questions=document.querySelectorAll("details");
-
-questions.forEach(function(q){
-
-let text=q.innerText.toLowerCase();
-
-if(text.includes(input)){
-q.style.display="block";
-}
-else{
-q.style.display="none";
-}
-
-});
-
-}
-
-</script>
 
 </head>
 
 <body>
 
 <div class="navbar">
-<div class="logo">QA Journey</div>
+
+<div class="logo">
+<a href="../index.html">
+<img src="../logo.png">
+</a>
+</div>
+
 <div>
-<a href="index.html">Home</a>
-<a href="manualTestingQuestions.html">Manual Testing</a>
-</div>
+<a href="../index.html">Home</a>
+<a href="/manual-testing-interview-questions/">Manual Testing</a>
 </div>
 
-<h1>Manual Testing Interview Questions</h1>
-
-<div class="search-box">
-<input id="searchInput" onkeyup="searchQuestions()" placeholder="🔍 Search interview questions...">
 </div>
+
+<h1>100 Manual Testing Interview Questions and Answers</h1>
 
 <div class="intro">
+This guide contains the <strong>top 100 manual testing interview questions and answers</strong> frequently asked in QA interviews for both freshers and experienced testers.
+</div>
+<div class="toc">
 
-<p>
-Manual testing is a fundamental skill for every QA engineer and software tester.
-This guide contains the most commonly asked <strong>manual testing interview questions with answers</strong>
-to help both beginners and experienced testers prepare for interviews.
-</p>
+<h2>Table of Contents</h2>
 
-<p>
-These questions are based on real-world QA scenarios used in Agile development environments.
-</p>
+<ul>
+<li><a href="#q1">1–10 Basic Testing Concepts</a></li>
+<li><a href="#q11">11–20 Testing Types</a></li>
+<li><a href="#q21">21–30 QA Fundamentals</a></li>
+<li><a href="#q31">31–40 Test Management</a></li>
+<li><a href="#q41">41–50 Defect Management</a></li>
+<li><a href="#q51">51–60 Scenario Based Questions</a></li>
+<li><a href="#q61">61–70 Database & API Testing</a></li>
+<li><a href="#q71">71–80 Testing Metrics & Environments</a></li>
+<li><a href="#q81">81–90 Performance & Security Testing</a></li>
+<li><a href="#q91">91–100 Advanced QA Concepts</a></li>
+</ul>
 
 </div>
 
-<div class="toc">
-<h3>Topics Covered</h3>
-<ul>
-<li>Verification vs Validation</li>
-<li>Test Scenario vs Test Case</li>
-<li>Bug Life Cycle</li>
-<li>Sanity Testing</li>
-<li>Regression Testing</li>
-<li>STLC</li>
-<li>Exploratory Testing</li>
-</ul>
+<h2>Software Testing Life Cycle (STLC)</h2>
+
+<div class="diagram">
+Requirement Analysis → Test Planning → Test Case Design → Test Execution → Test Closure
+</div>
+
+<h2>Bug Life Cycle</h2>
+
+<div class="diagram">
+New → Assigned → Open → Fixed → Retest → Closed
 </div>
 
 <!-- QUESTIONS -->
 
-<details>
-<summary>1. What is verification vs validation?</summary>
-<p>Verification checks whether the product is built according to specifications without executing the code, while validation checks whether the product meets user expectations by executing the application.</p>
-</details>
+<div class="question">1. What is manual testing?</div>
+<div class="answer">Manual testing is the process of testing software manually without using automation tools. Testers execute test cases, observe application behavior, and identify defects.</div>
 
-<details>
-<summary>2. What is a test scenario?</summary>
-<p>A test scenario is a high-level description of what functionality needs to be tested.</p>
-</details>
+<div class="question">2. What is software testing?</div>
+<div class="answer">Software testing verifies and validates that an application works according to requirements and is free from critical defects.</div>
 
-<details>
-<summary>3. What is a test case?</summary>
-<p>A test case is a detailed set of steps including test data, expected results, and execution conditions.</p>
-</details>
+<div class="question">3. What is verification?</div>
+<div class="answer">Verification checks whether the software is built according to design specifications without executing the application.</div>
 
-<details>
-<summary>4. Explain the bug life cycle.</summary>
-<p>New → Assigned → Open → Fixed → Retesting → Closed.</p>
-</details>
+<div class="question">4. What is validation?</div>
+<div class="answer">Validation checks whether the software meets user expectations by executing the application.</div>
 
-<details>
-<summary>5. What is sanity testing?</summary>
-<p>Sanity testing verifies specific functionality after a bug fix or small change.</p>
-</details>
+<div class="question">5. What is a test case?</div>
+<div class="answer">A test case is a document containing test steps, test data, expected results, and preconditions to verify functionality.</div>
 
-<details>
-<summary>6. What is severity vs priority?</summary>
-<p>Severity defines the impact of a bug while priority defines how quickly it should be fixed.</p>
-</details>
+<div class="question">6. What is a test scenario?</div>
+<div class="answer">A test scenario is a high-level description of what functionality needs to be tested.</div>
 
-<details>
-<summary>7. What is regression testing?</summary>
-<p>Regression testing ensures that existing functionality works correctly after code changes.</p>
-</details>
+<div class="question">7. What is a bug?</div>
+<div class="answer">A bug is an error in software that causes unexpected or incorrect behavior.</div>
 
-<details>
-<summary>8. Smoke vs sanity testing</summary>
-<p>Smoke testing checks major functionalities of a build while sanity testing checks specific changes.</p>
-</details>
+<div class="question">8. What is a defect?</div>
+<div class="answer">A defect is the difference between expected and actual application behavior.</div>
 
-<details>
-<summary>9. How do you write a bug report?</summary>
-<p>Include bug ID, description, steps to reproduce, expected result, actual result, and screenshots.</p>
-</details>
+<div class="question">9. What is severity?</div>
+<div class="answer">Severity indicates the impact of a defect on system functionality.</div>
 
-<details>
-<summary>10. What if requirements are unclear?</summary>
-<p>Discuss with the BA or developers and perform exploratory testing.</p>
-</details>
+<div class="question">10. What is priority?</div>
+<div class="answer">Priority indicates how quickly a defect should be fixed.</div>
 
-<details>
-<summary>11. Black box testing techniques</summary>
-<p>Equivalence Partitioning, Boundary Value Analysis, Decision Table Testing, State Transition Testing.</p>
-</details>
+<div class="question">11. What is regression testing?</div>
+<div class="answer">Regression testing ensures that previously working features continue to work after code changes.</div>
 
-<details>
-<summary>12. Test case design techniques</summary>
-<p>Equivalence Partitioning, Boundary Value Analysis, Decision Table Testing, State Transition Testing.</p>
-</details>
+<div class="question">12. What is smoke testing?</div>
+<div class="answer">Smoke testing checks basic functionality to ensure the build is stable enough for further testing.</div>
 
-<details>
-<summary>13. Types of non-functional testing</summary>
-<p>Performance, Load, Stress, Security, Usability, Compatibility testing.</p>
-</details>
+<div class="question">13. What is sanity testing?</div>
+<div class="answer">Sanity testing verifies specific functionality after minor changes or bug fixes.</div>
 
-<details>
-<summary>14. STLC stages</summary>
-<p>Requirement Analysis → Test Planning → Test Case Design → Test Execution → Test Closure.</p>
-</details>
+<div class="question">14. What is STLC?</div>
+<div class="answer">STLC stands for Software Testing Life Cycle which includes requirement analysis, planning, test design, execution and closure.</div>
 
-<details>
-<summary>15. Entry vs Exit criteria</summary>
-<p>Entry criteria defines when testing starts while exit criteria defines when testing ends.</p>
-</details>
+<div class="question">15. What is SDLC?</div>
+<div class="answer">SDLC stands for Software Development Life Cycle which includes requirement gathering, design, development, testing and deployment.</div>
 
-<details>
-<summary>16. What is exploratory testing?</summary>
-<p>Exploratory testing involves learning and executing tests simultaneously without predefined test cases.</p>
-</details>
+<div class="question">16. What is black box testing?</div>
+<div class="answer">Black box testing verifies functionality without knowledge of internal code.</div>
 
-<details>
-<summary>17. Functional vs non-functional testing</summary>
-<p>Functional testing verifies features while non-functional testing verifies performance and usability.</p>
-</details>
+<div class="question">17. What is white box testing?</div>
+<div class="answer">White box testing verifies internal code structure and logic.</div>
 
-<details>
-<summary>18. What is UAT?</summary>
-<p>User Acceptance Testing verifies whether the system meets business requirements.</p>
-</details>
+<div class="question">18. What is functional testing?</div>
+<div class="answer">Functional testing checks application features against business requirements.</div>
 
-<details>
-<summary>19. Retesting vs regression testing</summary>
-<p>Retesting verifies bug fixes while regression testing ensures existing functionality still works.</p>
-</details>
+<div class="question">19. What is non-functional testing?</div>
+<div class="answer">Non-functional testing verifies performance, security, usability and reliability.</div>
 
-<details>
-<summary>20. What is a test plan?</summary>
-<p>A document describing testing scope, strategy, resources, and schedule.</p>
-</details>
+<div class="question">20. What is exploratory testing?</div>
+<div class="answer">Exploratory testing is an approach where testers simultaneously learn the application and execute tests.</div>
 
-<details>
-<summary>21. Test case vs test script</summary>
-<p>A test case is manual testing documentation while a test script is used for automation.</p>
-</details>
+<div class="question">21. What is UAT?</div>
+<div class="answer">User Acceptance Testing verifies whether the system satisfies business requirements.</div>
 
-<details>
-<summary>22. What is defect leakage?</summary>
-<p>Defect leakage occurs when defects are missed in testing and found in production.</p>
-</details>
+<div class="question">22. What is alpha testing?</div>
+<div class="answer">Alpha testing is internal testing performed before releasing the product to external users.</div>
 
-<details>
-<summary>23. What is defect density?</summary>
-<p>Defect density measures the number of defects per module or lines of code.</p>
-</details>
+<div class="question">23. What is beta testing?</div>
+<div class="answer">Beta testing is performed by real users to collect feedback before final release.</div>
 
-<details>
-<summary>24. What is a test summary report?</summary>
-<p>A document summarizing executed test cases, results, and defects.</p>
-</details>
+<div class="question">24. What is boundary value analysis?</div>
+<div class="answer">Boundary Value Analysis tests edge values where defects are most likely to occur.</div>
 
-<details>
-<summary>25. What are test environments?</summary>
-<p>Development, QA/Test, Pre-production, and Production environments.</p>
-</details>
+<div class="question">25. What is equivalence partitioning?</div>
+<div class="answer">Equivalence partitioning divides input data into valid and invalid groups to reduce test cases.</div>
+
+<div class="question">26. What is defect leakage?</div>
+<div class="answer">Defect leakage occurs when defects are missed during testing and discovered later in production.</div>
+
+<div class="question">27. What is defect density?</div>
+<div class="answer">Defect density measures the number of defects per module or lines of code.</div>
+
+<div class="question">28. What is test plan?</div>
+<div class="answer">A test plan describes testing scope, strategy, resources, schedule and deliverables.</div>
+
+<div class="question">29. What is test strategy?</div>
+<div class="answer">Test strategy defines the high-level testing approach followed by the project.</div>
+
+<div class="question">30. What is test data?</div>
+<div class="answer">Test data is the input data used to execute test cases.</div>
+
+<div class="question">31. What is a build?</div>
+<div class="answer">A build is a compiled version of the application delivered by developers for testing.</div>
+
+<div class="question">32. What is release?</div>
+<div class="answer">A release is the final version delivered to customers after testing.</div>
+
+<div class="question">33. What is compatibility testing?</div>
+<div class="answer">Compatibility testing ensures the application works across browsers, devices and operating systems.</div>
+
+<div class="question">34. What is usability testing?</div>
+<div class="answer">Usability testing evaluates how user-friendly an application is.</div>
+
+<div class="question">35. What is risk-based testing?</div>
+<div class="answer">Risk-based testing prioritizes testing based on business risk and critical features.</div>
+
+<div class="question">36. What is ad-hoc testing?</div>
+<div class="answer">Ad-hoc testing is informal testing without predefined test cases.</div>
+
+<div class="question">37. What is positive testing?</div>
+<div class="answer">Positive testing verifies application behavior with valid inputs.</div>
+
+<div class="question">38. What is negative testing?</div>
+<div class="answer">Negative testing verifies application behavior with invalid inputs.</div>
+
+<div class="question">39. What is test environment?</div>
+<div class="answer">Test environment includes hardware, software, tools and configurations used for testing.</div>
+
+<div class="question">40. What is bug report?</div>
+<div class="answer">A bug report contains bug description, steps to reproduce, expected result, actual result and screenshots.</div>
+
+<div class="question">41. What is retesting?</div>
+<div class="answer">Retesting verifies that a previously failed test case passes after a defect is fixed.</div>
+
+<div class="question">42. Difference between retesting and regression testing?</div>
+<div class="answer">Retesting focuses on verifying a specific defect fix while regression testing verifies that other functionality still works.</div>
+
+<div class="question">43. What is test suite?</div>
+<div class="answer">A test suite is a collection of related test cases.</div>
+
+<div class="question">44. What is test harness?</div>
+<div class="answer">Test harness is a set of tools and scripts used for executing tests.</div>
+
+<div class="question">45. What is agile testing?</div>
+<div class="answer">Agile testing is testing performed continuously during agile development cycles.</div>
+
+<div class="question">46. What is sprint?</div>
+<div class="answer">A sprint is a short development cycle where features are developed and tested.</div>
+
+<div class="question">47. Role of QA in agile?</div>
+<div class="answer">QA collaborates with developers, writes test cases early, and performs continuous testing.</div>
+
+<div class="question">48. What is RTM?</div>
+<div class="answer">Requirement Traceability Matrix links requirements with test cases to ensure full coverage.</div>
+
+<div class="question">49. What is defect lifecycle?</div>
+<div class="answer">Defect lifecycle describes stages from defect discovery to closure.</div>
+
+<div class="question">50. What is acceptance testing?</div>
+<div class="answer">Acceptance testing ensures the system meets business requirements before release.</div>
+
+<!-- Scenario based questions -->
+
+<div class="question">51. How would you test a login page?</div>
+<div class="answer">Test valid login, invalid credentials, empty fields, password masking and security validations.</div>
+
+<div class="question">52. How would you test a signup form?</div>
+<div class="answer">Verify field validation, email format, password rules and duplicate user scenarios.</div>
+
+<div class="question">53. How would you test a search feature?</div>
+<div class="answer">Verify valid keywords, invalid inputs, partial matches and performance of search results.</div>
+
+<div class="question">54. How would you test a checkout process?</div>
+<div class="answer">Test product selection, cart update, payment gateway, order confirmation and email notification.</div>
+
+<div class="question">55. How would you test file upload functionality?</div>
+<div class="answer">Verify file formats, file size limits and upload errors.</div>
+
+<div class="question">56. How would you test password reset?</div>
+<div class="answer">Verify reset email, token validity and password rules.</div>
+
+<div class="question">57. What if requirements are unclear?</div>
+<div class="answer">Clarify with product owners or developers and document assumptions.</div>
+
+<div class="question">58. What if a bug is not reproducible?</div>
+<div class="answer">Verify environment, logs and provide detailed steps to developers.</div>
+
+<div class="question">59. What if build is unstable?</div>
+<div class="answer">Perform smoke testing and report critical failures.</div>
+
+<div class="question">60. How do you handle tight deadlines?</div>
+<div class="answer">Prioritize high-risk features and perform risk-based testing.</div>
+
+<!-- continue similar until 100 -->
+
+<div class="question">61. What is database testing?</div>
+<div class="answer">
+Database testing verifies the data stored in the database, including tables, relationships, triggers, and stored procedures. Testers validate that data is correctly saved, updated, and retrieved by the application.
+</div>
+
+<div class="question">62. What is data integrity testing?</div>
+<div class="answer">
+Data integrity testing ensures that data remains accurate, consistent, and reliable throughout the system. It verifies database constraints, relationships, and data correctness.
+</div>
+
+<div class="question">63. What is API testing?</div>
+<div class="answer">
+API testing verifies the functionality, reliability, performance, and security of APIs. Testers validate request responses, status codes, and data accuracy between systems.
+</div>
+
+<div class="question">64. What are common HTTP status codes in API testing?</div>
+<div class="answer">
+Common status codes include 200 (success), 201 (created), 204 (no content), 400 (bad request), 401 (unauthorized), 403 (forbidden), 404 (not found), and 500 (server error).
+</div>
+
+<div class="question">65. What is test coverage?</div>
+<div class="answer">
+Test coverage measures how much of the application functionality or code is covered by test cases.
+</div>
+
+<div class="question">66. What is a defect tracking tool?</div>
+<div class="answer">
+A defect tracking tool is used to record, track, and manage bugs during the testing lifecycle. Examples include Jira, Bugzilla, and Azure DevOps.
+</div>
+
+<div class="question">67. What information should be included in a bug report?</div>
+<div class="answer">
+A bug report should include bug ID, summary, description, steps to reproduce, expected result, actual result, screenshots, environment details, and severity.
+</div>
+
+<div class="question">68. What is production environment?</div>
+<div class="answer">
+Production is the live environment where real users interact with the application after deployment.
+</div>
+
+<div class="question">69. What is staging environment?</div>
+<div class="answer">
+Staging is a pre-production environment that closely mirrors the production setup and is used for final testing before release.
+</div>
+
+<div class="question">70. What is test closure?</div>
+<div class="answer">
+Test closure is the final phase of STLC where test results are documented, test metrics are analyzed, and lessons learned are recorded.
+</div>
+
+<div class="question">71. What is test metric?</div>
+<div class="answer">
+Test metrics are measurements used to evaluate testing progress and quality such as test coverage, defect density, and pass/fail rate.
+</div>
+
+<div class="question">72. What is defect prevention?</div>
+<div class="answer">
+Defect prevention focuses on identifying root causes of defects and improving development and testing processes to prevent future issues.
+</div>
+
+<div class="question">73. What is test execution?</div>
+<div class="answer">
+Test execution is the process of running test cases and comparing expected results with actual results to identify defects.
+</div>
+
+<div class="question">74. What is test log?</div>
+<div class="answer">
+A test log records details of executed test cases including execution time, tester name, and results.
+</div>
+
+<div class="question">75. What is a blocker defect?</div>
+<div class="answer">
+A blocker defect prevents further testing of the application and must be fixed immediately.
+</div>
+
+<div class="question">76. What is a critical defect?</div>
+<div class="answer">
+A critical defect affects major functionality of the system but may still allow limited testing to continue.
+</div>
+
+<div class="question">77. What is minor defect?</div>
+<div class="answer">
+A minor defect has little impact on functionality and usually affects cosmetic or non-critical features.
+</div>
+
+<div class="question">78. What is GUI testing?</div>
+<div class="answer">
+GUI testing verifies the graphical user interface including buttons, layouts, colors, fonts, and responsiveness.
+</div>
+
+<div class="question">79. What is localization testing?</div>
+<div class="answer">
+Localization testing verifies that the application works correctly in different languages and regional settings.
+</div>
+
+<div class="question">80. What is internationalization testing?</div>
+<div class="answer">
+Internationalization testing ensures that the application can support multiple languages and cultural settings.
+</div>
+
+<div class="question">81. What is configuration testing?</div>
+<div class="answer">
+Configuration testing verifies application behavior across different hardware, operating systems, browsers, and networks.
+</div>
+
+<div class="question">82. What is installation testing?</div>
+<div class="answer">
+Installation testing verifies that the application installs correctly and runs properly after installation.
+</div>
+
+<div class="question">83. What is recovery testing?</div>
+<div class="answer">
+Recovery testing verifies how well the system recovers from crashes, hardware failures, or other unexpected problems.
+</div>
+
+<div class="question">84. What is load testing?</div>
+<div class="answer">
+Load testing evaluates how the application behaves under expected user load conditions.
+</div>
+
+<div class="question">85. What is stress testing?</div>
+<div class="answer">
+Stress testing determines how the application behaves under extreme load conditions beyond its limits.
+</div>
+
+<div class="question">86. What is performance testing?</div>
+<div class="answer">
+Performance testing measures system responsiveness, stability, and speed under different workloads.
+</div>
+
+<div class="question">87. What is security testing?</div>
+<div class="answer">
+Security testing identifies vulnerabilities in the system and ensures data protection from unauthorized access.
+</div>
+
+<div class="question">88. What is penetration testing?</div>
+<div class="answer">
+Penetration testing simulates cyber attacks to evaluate system security vulnerabilities.
+</div>
+
+<div class="question">89. What is session testing?</div>
+<div class="answer">
+Session testing verifies session management such as login sessions, timeout behavior, and session security.
+</div>
+
+<div class="question">90. What is cookie testing?</div>
+<div class="answer">
+Cookie testing verifies how cookies store and manage user information within the browser.
+</div>
+
+<div class="question">91. What is cache testing?</div>
+<div class="answer">
+Cache testing verifies whether the application correctly stores and retrieves cached data for performance improvement.
+</div>
+
+<div class="question">92. What is URL testing?</div>
+<div class="answer">
+URL testing verifies proper redirection, valid links, and handling of invalid URLs.
+</div>
+
+<div class="question">93. What is accessibility testing?</div>
+<div class="answer">
+Accessibility testing ensures that applications are usable by people with disabilities, such as screen reader compatibility.
+</div>
+
+<div class="question">94. What is compatibility testing?</div>
+<div class="answer">
+Compatibility testing verifies the application works across different browsers, devices, and operating systems.
+</div>
+
+<div class="question">95. What is mobile testing?</div>
+<div class="answer">
+Mobile testing verifies mobile applications on different devices, screen sizes, and operating systems.
+</div>
+
+<div class="question">96. What is cloud testing?</div>
+<div class="answer">
+Cloud testing verifies applications hosted in cloud environments such as AWS, Azure, or Google Cloud.
+</div>
+
+<div class="question">97. What is test automation?</div>
+<div class="answer">
+Test automation uses tools like Selenium, Cypress, or Playwright to execute test cases automatically.
+</div>
+
+<div class="question">98. What is continuous testing?</div>
+<div class="answer">
+Continuous testing integrates automated tests into CI/CD pipelines to ensure quality during development.
+</div>
+
+<div class="question">99. What is CI/CD?</div>
+<div class="answer">
+CI/CD stands for Continuous Integration and Continuous Delivery which automates build, testing, and deployment processes.
+</div>
+
+<div class="question">100. What is the role of a QA engineer?</div>
+<div class="answer">
+A QA engineer ensures software quality by designing tests, identifying defects, collaborating with developers, and validating that applications meet user requirements.
+</div>
 
 <footer>
+
 <p>© 2026 QA Journey</p>
 <p>Helping testers prepare for QA interviews.</p>
+
 </footer>
 
 </body>
